@@ -58,6 +58,36 @@ int main(int argc,char* argv[])
             cout << "M=" << endl << m << endl;
         }
         break;
+    case 5:
+        {
+            Mat m = Mat(3, 2, CV_8UC3);
+            randu(m, Scalar::all(0), Scalar::all(128));
+            cout << "M=" << endl << m << endl;
+            cout << "format python M=" << endl << format(m, Formatter::FMT_PYTHON) << endl;
+            cout << "format matlab M=" << endl << format(m, Formatter::FMT_MATLAB) << endl;
+            cout << "format numpy  M=" << endl << format(m, Formatter::FMT_NUMPY) << endl;
+            cout << "format c      M=" << endl << format(m, Formatter::FMT_C) << endl;
+            cout << "format csv    M=" << endl << format(m, Formatter::FMT_CSV) << endl;
+        }
+        break;
+    case 6:
+        {
+            Point2f p(4, 2);
+            cout << "Point(2d)" << p << endl;
+            Point3f p3f(3, 1, 4);
+            cout << "Point(3d)" << p3f << endl;
+        }
+        break;
+    case 7:
+        {
+            vector<float> v;
+            v.push_back((float)CV_PI);
+            v.push_back(32.2);
+            v.push_back(1111.1);
+            Mat m(v);
+            cout << "M=" << endl << m << endl;
+        }
+        break;
     default:
         break;
     }
